@@ -23,5 +23,5 @@ exports.up = function(knex) {
 };
 
 exports.down = function(knex) {
-  return knex.schema.dropTable("users").dropTable("URLList");
+  return knex.schema.dropTable("URLList").dropTable("users");
 };

@@ -1,0 +1,213 @@
+@font-face {
+  font-family: "Lato";
+  src: url("../font/Lato-Italic.woff2") format("woff2"),
+    url("../font/Lato-Italic.woff") format("woff");
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Lato";
+  src: url("../font/Lato-BlackItalic.woff2") format("woff2"),
+    url("../font/Lato-BlackItalic.woff") format("woff");
+  font-weight: 900;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Lato";
+  src: url("../font/Lato-Bold.woff2") format("woff2"),
+    url("../font/Lato-Bold.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Lato";
+  src: url("../font/Lato-BoldItalic.woff2") format("woff2"),
+    url("../font/Lato-BoldItalic.woff") format("woff");
+  font-weight: bold;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Lato";
+  src: url("../font/Lato-Black.woff2") format("woff2"),
+    url("../font/Lato-Black.woff") format("woff");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Lato Hairline";
+  src: url("../font/Lato-HairlineItalic.woff2") format("woff2"),
+    url("../font/Lato-HairlineItalic.woff") format("woff");
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Lato";
+  src: url("../font/Lato-LightItalic.woff2") format("woff2"),
+    url("../font/Lato-LightItalic.woff") format("woff");
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Lato";
+  src: url("../font/Lato-Light.woff2") format("woff2"),
+    url("../font/Lato-Light.woff") format("woff");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Lato Hairline";
+  src: url("../font/Lato-Hairline.woff2") format("woff2"),
+    url("../font/Lato-Hairline.woff") format("woff");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Lato";
+  src: url("../font/Lato-Regular.woff2") format("woff2"),
+    url("../font/Lato-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+body {
+  width: 20rem;
+  height: auto;
+  font-family: "Lato";
+  background-color: white;
+  margin: 0;
+}
+
+#sign-out {
+  position: relative;
+  width: 3rem;
+  height: 0.7rem;
+  padding: 0.15rem 0.3rem 0.3rem 0.3rem;
+  text-align: center;
+  font-size: 0.7rem;
+  font-family: "Lato";
+  font-weight: 700;
+  font-style: italic;
+  color: black;
+  background-color: white;
+  border-radius: 0.313rem;
+  cursor: pointer;
+  transform: translateX(-50%);
+  transition-duration: 0.3s;
+  border: solid black 0.1rem;
+}
+
+#sign-out:hover {
+  color: #11ce00;
+  transform: translateX(-50%) scale(1.1);
+}
+
+.header {
+  background-color: #21fb0c;
+  width: 100%;
+  text-align: left;
+  padding: 0.5rem 0 0.3rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  width: 8rem;
+  cursor: pointer;
+}
+
+.logo:hover{
+    transform: scale(1.05);
+    transition-duration: 0.3s;
+}
+
+.main {
+  padding: 0.5rem 1rem 0.3rem 1rem;
+}
+
+.buttons {
+  /* transform: translateX(-50%); */
+  width: 5.2rem;
+  height: 2.2rem;
+  padding: 0.313rem;
+  background-color: #21fb0c;
+  color: black;
+  border-radius: 0.313rem;
+  font-size: 1rem;
+  text-align: center;
+  font-family: "Lato";
+  font-weight: bold;
+  font-style: italic;
+  cursor: pointer;
+  transition-duration: 0.3s;
+  margin: 0.5rem 0 0.5rem 0;
+}
+.buttons:hover {
+  color: white;
+  transform: translateY(10%) scale(1.1);
+}
+
+ul{
+    margin-top: 0rem;
+    padding: 0;
+}
+
+p{
+    font-size: 1rem;
+    font-style: italic;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+p:first-child{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-right: 1.5rem;
+}
+
+p:nth-child(2){
+    font-weight: 700;
+}
+
+p:nth-child(2):hover{
+    color: red;
+    transform: translateX(3.3%) scale(2.1);
+    transition-duration: 0.1s;
+
+}
+
+p:first-child:hover{
+    color: #21fb0c;
+    transform: translateX(3.3%) scale(1.1);
+    transition-duration: 0.1s;
+}
+
+li{
+    list-style: none;
+    border-bottom: solid 0.05rem #21fb0c;
+}
+
+.organize-p-tags{
+    display: flex;
+    justify-content: space-between;
+}

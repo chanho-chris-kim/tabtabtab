@@ -1,6 +1,5 @@
 const express = require("express");
 const router = express.Router();
-const { v4: uuid4 } = require("uuid");
 const List = require("../models/List.js");
 
 router.get("/:userID", (req, res) => {
@@ -40,10 +39,6 @@ router.post("/:userID", (req, res) => {
   try {
     const userID = req.params.userID;
     const body = req.body;
-
-    if(!body.id){
-      body["id"] = uuid4();
-    }
 
     if(!body.user_id){
       body["user_id"] = userID;

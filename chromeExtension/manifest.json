@@ -1,0 +1,29 @@
+{
+    "name":"TabTabTab Ext",
+    "description":"my TabTabTab Chrome extension",
+    "version": "0.1.0",
+    "manifest_version":2,
+    "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAvVGbko1e+PMUoAzfWPI6LEX9mLE+kihP8FnQOlHGAoatVclevovfHqdy67nOPLs724Cg+o3Y920UUuY1vOLc84vdYg+AUAZvIbvMjsCwjrCGKgOvFM24PwTSGlnPg6oENWSW8DKkC+D+BsIrpjn58Rsd6Lw+9A7G1KOAX0tuAA4fZrVFhAYlk1TaNUtWHVyEkQYWi7MYY6LrbHc/TR6N4c+TjGAJWYUGU5aoZ4SsjPEwgczNxloJ2FgzNfh807pGpYUGmRFNp3Fyx5r+twuP22Hh9vR8C1ryJ0ifzVb6F0d0tuuiSVKnRz0uDsFpRjjCLdV3YgL+yPBO8Exmt4yomQIDAQAB",
+    "icons":{
+        "16":"./icon.png",
+        "32":"./icon.png",
+        "48":"./icon.png",
+        "128":"./icon.png"
+    },
+    "background":{
+        "scripts": [
+            "./background.js",
+            "./jsrsasign-all-min.js"
+        ]
+    },
+    "homepage_url": "https://github.com/chanho-chris-kim",
+    "options_page":"./options.html",
+    "browser_action":{
+        "default_popup":"popup.html"
+    },
+    "permissions":[
+        "identity",
+        "http://localhost:5000/*",
+        "tabs"
+    ]
+}
