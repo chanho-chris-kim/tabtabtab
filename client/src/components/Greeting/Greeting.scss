@@ -1,0 +1,36 @@
+@use '../../partials/mixins' as *;
+@use '../../partials/typography' as *;
+@use '../../partials/variables' as *;
+
+.greeting {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 5rem 8rem;
+
+  &__background {
+    background-color: $neon-green;
+    height: calc(100vh - 9rem);
+    overflow: scroll;
+  }
+
+  &__header{
+      margin: 0 0 1rem 0;
+      font-weight: 700;
+      font-style: italic;
+      font-size: 1.5rem;
+
+      &--name{
+          font-size: 2.5rem;
+      }
+  }
+  &__buttons{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+  }
+  &__button {
+    width: 100%;
+    height: 4rem;
+  }
+}

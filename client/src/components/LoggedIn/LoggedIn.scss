@@ -2,9 +2,51 @@
 @use '../../partials/typography' as *;
 @use '../../partials/variables' as *;
 
-.logged-in{
-    &__modal-button{
+.logged-in {
+  &__icon-background {
+    position: absolute;
+    background-color: #92ff83;
+    top: 4rem;
+    right: 1rem;
+    width: 2.8rem;
+    height: 2.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &--close{
         position: absolute;
-        font-weight: 700;
+        background-color: $neon-green;
+        top: 4rem;
+        right: 1rem;
+        width: 2.8rem;
+        height: 2.8rem;
+        transform: translateX(-14rem);
+        transition: 0.25s;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 0.5rem 0 0 0.5rem;
+
     }
+  }
+  &__modal-button {
+    width: 2rem;
+    z-index: 1;
+    cursor: pointer;
+    &:hover {
+      filter: brightness(0) invert(1);
+    }
+
+    &--close {
+      width: 2rem;
+      z-index: 1;
+      cursor: pointer;
+      transform:  rotate(180deg);
+      transition: 0.25s;
+      &:hover {
+        filter: brightness(0) invert(1);
+      }
+    }
+  }
 }

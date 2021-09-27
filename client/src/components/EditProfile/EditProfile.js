@@ -1,47 +1,55 @@
 import { useState } from "react";
 import axios from "axios";
 import url from "../../Util/Util";
-import "./EditModal.scss";
-
-function EditModal({ id, selectedList, setModalHandler }) {
-  const [newURLName, setNewURLName] = useState(selectedList.URLName);
-  const [newURLPath, setNewURLPath] = useState(selectedList.URLPath);
+import "./EditProfile.scss";
+function EditProfile({
+  id,
+  name,
+  email,
+  SetEditProfileModalHandler,
+  setUserData,
+  setModalHandler,
+}) {
+  const [newName, setNewName] = useState(name);
+  const [newEmail, setNewEmail] = useState(email);
 
   const handleChange = (e) => {
-    if (e.target.name === "URLName") {
-      setNewURLName(e.target.value);
+    if (e.target.name === "userName") {
+      setNewName(e.target.value);
     }
-    if (e.target.name === "URLPath") {
-      setNewURLPath(e.target.value);
+    if (e.target.name === "email") {
+      setNewEmail(e.target.value);
     }
   };
 
   const handleClick = (_e, handler) => {
-    if (handler) {
-      console.log(handler);
+    if (handler === false) {
+      SetEditProfileModalHandler(handler);
     }
-    if (setNewURLName === "") {
+    if (setNewName === "") {
       alert("Can't have empty name value");
       return;
     }
-    if (setNewURLPath === "") {
+    if (setNewEmail === "") {
       alert("Can't have empty email value");
       return;
     }
     const editQuery = {
-      URLName: newURLName,
-      URLPath: newURLPath,
+      name: newName,
+      email: newEmail,
     };
     axios
-      .put(`${url}/list/${id}/${selectedList.id}`, editQuery)
-      .then(() => {
+      .put(`${url}/users/${id}`, editQuery)
+      .then((res) => {
+        SetEditProfileModalHandler(false);
+        setUserData(res.data);
         setModalHandler(false);
       })
       .catch((err) => {
         console.log(err);
       });
-    setNewURLName("");
-    setNewURLPath("");
+    setNewName("");
+    setNewEmail("");
   };
 
   const handledEnterKey = (e) => {
@@ -54,6 +62,7 @@ function EditModal({ id, selectedList, setModalHandler }) {
     <div
       className="edit-modal__background"
       onClick={() => {
+        SetEditProfileModalHandler(false);
         setModalHandler(false);
       }}
     >
@@ -62,36 +71,39 @@ function EditModal({ id, selectedList, setModalHandler }) {
           className="edit-modal__exit"
           onClick={() => {
             setModalHandler(false);
+            SetEditProfileModalHandler(false);
           }}
         >
           X
         </p>
         <form className="edit-modal__form" onKeyPress={handledEnterKey}>
-          <label className="edit-modal__label" htmlFor="url name">
-            Tab Name
+          <label className="edit-modal__label" htmlFor="user name">
+            Name:
           </label>
           <input
             className="edit-modal__input"
             type="text"
-            name="URLName"
+            name="userName"
             onChange={handleChange}
-            value={newURLName}
+            value={newName}
           />
-          <label className="edit-modal__label" htmlFor="url address">
-            Tab Address
+          <label className="edit-modal__label" htmlFor="user email">
+            Email Address:
           </label>
           <input
             className="edit-modal__input"
             type="text"
-            name="URLPath"
+            name="email"
             onChange={handleChange}
-            value={newURLPath}
+            value={newEmail}
           />
           <div className="edit-modal__button-box">
             <button
               className="edit-modal__button"
               type="button"
-              onClick={handleClick}
+              onClick={() => {
+                handleClick(false);
+              }}
             >
               Change
             </button>
@@ -102,4 +114,4 @@ function EditModal({ id, selectedList, setModalHandler }) {
   );
 }
 
-export default EditModal;
+export default EditProfile;

@@ -6,7 +6,7 @@ import "./URLList.scss";
 
 function URLList({ id, name }) {
   const [list, setList] = useState(null);
-  const [modemHandler, setModemHandler] = useState(false);
+  const [modalHandler, setModalHandler] = useState(false);
   const [selectedList, setSelectedList] = useState(null);
 
   const linkHandler = (url) => {
@@ -14,7 +14,7 @@ function URLList({ id, name }) {
   };
 
   const editHandler = (handler, selectedList) => {
-    setModemHandler(handler);
+    setModalHandler(handler);
     setSelectedList(selectedList);
   };
 
@@ -36,7 +36,7 @@ function URLList({ id, name }) {
     <ul className="home-URL-list">
       <div className="home-URL-list__header">
         <h3 className="home-URL-list__header-title">
-          {`Here's your saved tabs, ${name}`}
+          Here's your saved tabs, <span className="home-URL-list__header-title--username">{name}</span>
         </h3>
       </div>
       {list &&
@@ -70,7 +70,7 @@ function URLList({ id, name }) {
             </li>
           );
         })}
-        {modemHandler && <EditModal id={id} selectedList={selectedList} setModemHandler={setModemHandler}/>}
+        {modalHandler && <EditModal id={id} selectedList={selectedList} setModalHandler={setModalHandler}/>}
     </ul>
   );
 }

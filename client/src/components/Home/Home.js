@@ -1,9 +1,9 @@
 import { useState } from "react";
 import axios from "axios";
-import { GoogleLogin } from "react-google-login";
-import url, { clientId } from "../../Util/Util";
+import url from "../../Util/Util";
 import SignUp from "../SignUp/SignUp";
 import LoggedIn from "../LoggedIn/LoggedIn";
+import Greeting from "../Greeting/Greeting";
 import "./Home.scss";
 
 function Home() {
@@ -87,32 +87,17 @@ function Home() {
       <div className="home">
         <LoggedIn userData={userData} 
         onLogoutSuccess={onLogoutSuccess}
-        image={image} />
+        image={image} 
+        setUserData={setUserData}/>
       </div>
     );
     //if not logged in
   } else if (status === "LoggedOut") {
     return (
-      <div className="home">
-        <div className="google-button">
-          <GoogleLogin
-            clientId={clientId}
-            buttonText="Signup with google"
-            onSuccess={onCheckingToSignup}
-            onFailure={onFailure}
-            cookiePolicy={"single_host_origin"}
-          />
-        </div>
-        <div className="google-button">
-          <GoogleLogin
-            clientId={clientId}
-            buttonText="Login with google"
-            onSuccess={onLoginSuccess}
-            onFailure={onFailure}
-            cookiePolicy={"single_host_origin"}
-          />
-        </div>
-      </div>
+      <Greeting
+      onLoginSuccess={onLoginSuccess}
+      onCheckingToSignup={onCheckingToSignup}
+      onFailure={onFailure}/>
     );
   } else if (status === "SignUp") {
     return (
