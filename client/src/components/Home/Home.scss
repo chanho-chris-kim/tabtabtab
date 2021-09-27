@@ -1,0 +1,14 @@
+.google-button{
+    width: 15rem;
+    background-color: orange;
+    height: 4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin:0 0 0 auto;
+}
+
+.home{
+    height: calc(100vh - 9rem);
+    overflow:scroll;
+}
