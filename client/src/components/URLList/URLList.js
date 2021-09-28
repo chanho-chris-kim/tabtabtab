@@ -12,7 +12,6 @@ function URLList({ id, name }) {
   const linkHandler = (url) => {
     window.open(url);
   };
-
   const editHandler = (handler, selectedList) => {
     setModalHandler(handler);
     setSelectedList(selectedList);
@@ -30,7 +29,7 @@ function URLList({ id, name }) {
     axios.get(`${url}/list/${id}`).then((res) => {
       setList(res.data);
     });
-  }, list);
+  }, [list,id]);
 
   return (
     <ul className="home-URL-list">

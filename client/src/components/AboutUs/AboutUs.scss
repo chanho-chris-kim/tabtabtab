@@ -1,0 +1,51 @@
+@use '../../partials/mixins' as *;
+@use '../../partials/typography' as *;
+@use '../../partials/variables' as *;
+
+@keyframes gradient {
+  0% {
+    background-position: 57% 0%;
+  }
+  50% {
+    background-position: 44% 100%;
+  }
+  100% {
+    background-position: 57% 0%;
+  }
+}
+.about-us {
+  background: linear-gradient(555deg, $neon-green, #000000);
+  background-size: 600% 600%;
+
+  animation: gradient 5s ease infinite;
+  text-align: center;
+  padding: 35vh 4rem;
+  &__background {
+    background: linear-gradient(555deg, $neon-green, #000000);
+    background-size: 600% 600%;
+
+    animation: gradient 5s ease infinite;
+    height: calc(100vh - 9rem);
+    overflow: scroll;
+  }
+
+  &__header {
+    font-style: italic;
+    margin: 0 0 0.5rem 0;
+  }
+
+  &__logo {
+    font-size: 2.5rem;
+    &--second {
+      font-size: 1.5rem;
+    }
+  }
+
+  &__sub-header {
+    font-style: italic;
+    font-size: 1.3rem;
+    font-weight: 500;
+    margin: 0;
+    color: rgb(198, 198, 198);
+  }
+}
