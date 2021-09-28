@@ -1,4 +1,20 @@
+@use '../../partials/variables' as *;
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 0%;
+  }
+  50% {
+    background-position: 100% 0%;
+  }
+  100% {
+    background-position: 0% 0%;
+  }
+}
 .home{
     height: calc(100vh - 9rem);
     overflow:scroll;
+    background: linear-gradient(175deg,rgb(198, 255, 200),white);
+    background-size: 580% 110%;
+    animation: gradient 4s infinite;
 }
