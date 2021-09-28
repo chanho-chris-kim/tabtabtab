@@ -4,28 +4,24 @@
 
 @keyframes gradient {
   0% {
-    background-position: 57% 0%;
+    background-position: 0% 0%;
   }
   50% {
-    background-position: 44% 100%;
+    background-position: 100% 0%;
   }
   100% {
-    background-position: 57% 0%;
+    background-position: 0% 0%;
   }
 }
+
 .about-us {
-  background: linear-gradient(555deg, $neon-green, #000000);
-  background-size: 600% 600%;
-
-  animation: gradient 5s ease infinite;
-  text-align: center;
-  padding: 35vh 4rem;
+  padding: 30vh 4rem;
+  background: linear-gradient(175deg,$neon-green,$neon-green,$neon-green,white,white);
+  background-size: 150% 110%;
+  animation: gradient 2s infinite;
   &__background {
-    background: linear-gradient(555deg, $neon-green, #000000);
-    background-size: 600% 600%;
-
-    animation: gradient 5s ease infinite;
-    height: calc(100vh - 9rem);
+    background-color: white;
+    height: calc(115vh - (9rem + 3.977rem));
     overflow: scroll;
   }
 
@@ -46,6 +42,6 @@
     font-size: 1.3rem;
     font-weight: 500;
     margin: 0;
-    color: rgb(198, 198, 198);
+    color: rgb(79, 79, 79);
   }
 }

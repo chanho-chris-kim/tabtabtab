@@ -1,4 +1,3 @@
-import React from "react";
 import githubIcon from "../../assets/image/github_icon.png";
 import instagramIcon from "../../assets/image/instagram_icon.png";
 import linkedInIcon from "../../assets/image/linkedIn_icon.png";
