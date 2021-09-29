@@ -24,7 +24,7 @@ function create_auth_endpoint() {
 }
 
 
-chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
+chrome.runtime.onMessage.addListener((request, _sender, sendResponse) => {
     if (request.message === 'login') {
         if (signedInStatus) {
             console.log("User is already signed in.");

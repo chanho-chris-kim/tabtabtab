@@ -18,24 +18,30 @@ function URLList({ id, name }) {
   };
 
   const deleteHandler = (selectedUrlID) => {
-    axios.delete(`${url}/list/${id}/${selectedUrlID}`).then(()=>{
-        axios.get(`${url}/list/${id}`).then((res) => {
-            setList(res.data);
-          });
-    })
+    axios.delete(`${url}/list/${id}/${selectedUrlID}`).then(() => {
+      axios.get(`${url}/list/${id}`).then((res) => {
+        setList(res.data);
+      });
+    });
   };
 
   useEffect(() => {
-    axios.get(`${url}/list/${id}`).then((res) => {
-      setList(res.data);
-    });
-  }, [list, id]);
+    const intervalId = setInterval(()=>{
+      axios.get(`${url}/list/${id}`).then((res) => {
+        setList(res.data);
+      });
+    }, 1000);
+
+    return (()=>{
+      clearInterval(intervalId);
+    })
+  },[]);
 
   return (
     <ul className="home-URL-list">
       <div className="home-URL-list__header">
-        <h3 className="home-URL-list__header-title">
-          Here's your saved tabs,</h3> <h2 className="home-URL-list__header-title--username">{name}</h2>
+        <h3 className="home-URL-list__header-title">Here's your saved tabs,</h3>{" "}
+        <h2 className="home-URL-list__header-title--username">{name}</h2>
       </div>
       {list &&
         list.map((data) => {
@@ -68,7 +74,13 @@ function URLList({ id, name }) {
             </li>
           );
         })}
-        {modalHandler && <EditModal id={id} selectedList={selectedList} setModalHandler={setModalHandler}/>}
+      {modalHandler && (
+        <EditModal
+          id={id}
+          selectedList={selectedList}
+          setModalHandler={setModalHandler}
+        />
+      )}
     </ul>
   );
 }

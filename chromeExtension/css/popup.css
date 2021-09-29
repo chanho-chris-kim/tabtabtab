@@ -112,7 +112,6 @@ body {
     font-family: 'Lato';
     font-weight: bold;
     font-style: italic;
-    margin-bottom: 0.938rem;
     cursor: pointer;
     transition-duration: 0.3s;
     border: solid black 0.1rem;
@@ -143,4 +142,14 @@ body {
 .main{
     padding: 0.5rem 1rem 0.3rem 1rem;
     font-style: italic;
+    text-align: center;
+}
+
+h4{
+    margin: 0.5rem 0 0.938rem 0;
+    color: rgb(0, 0, 0);
+    font-weight: 500;
+}
+span{
+    color: rgb(211, 0, 0);
 }
