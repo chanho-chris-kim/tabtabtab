@@ -30,7 +30,7 @@ function Home({status, setStatus, userData, setUserData}) {
       setStatus("LoggedIn");
 
     }
-  }, []);
+  }, [setStatus,setUserData]);
 
   const onLoginSuccess = (res) => {
     const data = res.profileObj;

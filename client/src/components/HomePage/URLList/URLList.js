@@ -29,7 +29,7 @@ function URLList({ id, name }) {
     axios.get(`${url}/list/${id}`).then((res) => {
       setList(res.data);
     });
-  }, []);
+  }, [list, id]);
 
   return (
     <ul className="home-URL-list">

@@ -6,7 +6,7 @@ import EditProfile from "../EditProfile/EditProfile";
 import "./LoggedIn.scss";
 
 function LoggedIn({ userData, onLogoutSuccess, setUserData, setStatus }) {
-  const { id, name, email, image } = userData;
+  const { id, name, image } = userData;
   const [modalHandler, setModalHandler] = useState(false);
   const [EditProfileModalHandler, SetEditProfileModalHandler] = useState(false);
 
