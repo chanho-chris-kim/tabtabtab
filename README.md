@@ -6,6 +6,11 @@ Consist of a Chrome extension, an app, and it's own server and Data.
 Instead of keeping hundreds of tabs on your window, just add it to the TabTabTab to come back later!
 
 
+## Demo
+
+![demo](https://github.com/chanho-chris-kim/tabtabtab/blob/main/demo.gif?raw=true)
+
+  
 ## Installation
 open two terminals
 ##### terminal 1 (server)
