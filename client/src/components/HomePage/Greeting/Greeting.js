@@ -1,6 +1,6 @@
 import "./Greeting.scss";
 import { GoogleLogin } from "react-google-login";
-import { clientId } from "../../Util/Util";
+import { clientId } from "../../../Util/Util";
 
 function Greeting({ onLoginSuccess, onCheckingToSignup, onFailure }) {
   return (
@@ -13,16 +13,7 @@ function Greeting({ onLoginSuccess, onCheckingToSignup, onFailure }) {
           <div className="greeting__button">
             <GoogleLogin
               clientId={clientId}
-              buttonText="Signup with google"
-              onSuccess={onCheckingToSignup}
-              onFailure={onFailure}
-              cookiePolicy={"single_host_origin"}
-            />
-          </div>
-          <div className="greeting__button">
-            <GoogleLogin
-              clientId={clientId}
-              buttonText="Login with google"
+              buttonText="Login / Sign up with google"
               onSuccess={onLoginSuccess}
               onFailure={onFailure}
               cookiePolicy={"single_host_origin"}

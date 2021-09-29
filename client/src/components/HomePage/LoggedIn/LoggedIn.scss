@@ -1,23 +1,23 @@
-@use '../../partials/mixins' as *;
-@use '../../partials/typography' as *;
-@use '../../partials/variables' as *;
+@use '../../../partials/mixins' as *;
+@use '../../../partials/typography' as *;
+@use '../../../partials/variables' as *;
 
 .logged-in {
   &__icon-background {
     position: absolute;
     background-color: #92ff83;
-    top: 4rem;
+    top: 4.8rem;
     right: 1rem;
     width: 2.8rem;
     height: 2.8rem;
     display: flex;
     align-items: center;
     justify-content: center;
-
+    
     &--close{
         position: absolute;
         background-color: $neon-green;
-        top: 4rem;
+        top: 4.8rem;
         right: 1rem;
         width: 2.8rem;
         height: 2.8rem;
@@ -28,6 +28,9 @@
         justify-content: center;
         border-radius: 0.5rem 0 0 0.5rem;
 
+        @include tablet{
+          right: 4rem;
+        }
     }
   }
   &__modal-button {

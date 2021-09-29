@@ -1,8 +1,8 @@
 import { GoogleLogout } from "react-google-login";
-import { clientId } from "../../Util/Util";
+import { clientId } from "../../../Util/Util";
 import "./ProfileModal.scss";
-function ProfileModal({userData, onLogoutSuccess ,image, SetEditProfileModalHandler}) {
-    const { name } = userData;
+function ProfileModal({userData, onLogoutSuccess , SetEditProfileModalHandler}) {
+    const { name, image } = userData;
 
   return (
     <div className="profileModal">

@@ -5,6 +5,7 @@ exports.up = function(knex) {
       table.string("id").primary().unique();
       table.string("name").notNullable();
       table.string("email").notNullable();
+      table.string("image").notNullable();
       table.timestamp("updated_at").defaultTo(knex.fn.now());
     })
     .createTable("URLList", (table) => {

@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
-import url from "../../Util/Util";
+import url from "../../../Util/Util";
 import EditModal from "../EditModal/EditModal";
 import "./URLList.scss";
 
@@ -29,14 +29,13 @@ function URLList({ id, name }) {
     axios.get(`${url}/list/${id}`).then((res) => {
       setList(res.data);
     });
-  }, [list,id]);
+  }, []);
 
   return (
     <ul className="home-URL-list">
       <div className="home-URL-list__header">
         <h3 className="home-URL-list__header-title">
-          Here's your saved tabs, <span className="home-URL-list__header-title--username">{name}</span>
-        </h3>
+          Here's your saved tabs,</h3> <h2 className="home-URL-list__header-title--username">{name}</h2>
       </div>
       {list &&
         list.map((data) => {

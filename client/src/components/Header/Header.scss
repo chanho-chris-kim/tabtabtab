@@ -2,36 +2,39 @@
 @use '../../partials/typography' as *;
 @use '../../partials/variables' as *;
 
-.header{
-    background-color: $neon-green;
-    padding: 1rem 1rem 0.5rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    &__logo{
-        width: 8rem;
-        &:hover{
-            transform: scale(1.1);
-        }
+.header {
+  background-color: $neon-green;
+  padding: 1rem 1rem 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  &__logo {
+    width: 8rem;
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+
+  &__link {
+    font-size: 0.8rem;
+    margin-left: 0.2rem;
+    border-right: solid 0.05rem black;
+    padding-right: 0.2rem;
+    color: black;
+    cursor: pointer;
+    text-decoration: none;
+    font-weight: 700;
+    font-style: italic;
+    &:nth-child(4) {
+      padding-right: 0;
+      border-right: none;
     }
 
-    &__link{
-        font-size: 0.8rem;
-        margin-left: 0.2rem;
-        border-right: solid 0.05rem black;
-        padding-right: 0.2rem;
-        color: black;
-        cursor: pointer;
-        text-decoration: none;
-        font-weight: 700;
-        font-style: italic;
-        &:nth-child(4){
-            padding-right: 0;
-            border-right: none;
-        }
-
-        &:hover, &:active, &:focus{
-            color: white;
-        }
+    &:hover {
+      color: white;
     }
+    &--active {
+      color: white;
+    }
+  }
 }

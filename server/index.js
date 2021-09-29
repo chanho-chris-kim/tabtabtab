@@ -3,8 +3,7 @@ const app = express();
 const cors = require('cors');
 const usersRoutes = require('./route/Users')
 const listRoutes = require('./route/List')
-
-require('dotenv').config()
+if(process.env.NODE_ENV !== "production") require('dotenv').config();
 const PORT = process.env.PORT || 4000;
 app.use(express.json());
 app.use(cors());
