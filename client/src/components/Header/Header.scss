@@ -8,6 +8,10 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+
+  @include tablet{
+    padding: 1rem 2rem 0.5rem;
+  }
   &__logo {
     width: 8rem;
     &:hover {

@@ -35,7 +35,7 @@ function URLList({ id, name }) {
     return (()=>{
       clearInterval(intervalId);
     })
-  },[]);
+  },[id]);
 
   return (
     <ul className="home-URL-list">

@@ -28,7 +28,7 @@ function Home({status, setStatus, userData, setUserData}) {
         console.log(err);
       });
       setStatus("LoggedIn");
-
+      
     }
   }, [setStatus,setUserData]);
 

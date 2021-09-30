@@ -7,6 +7,8 @@ function EditProfile({ userData, SetEditProfileModalHandler, setUserData,
   const {id, name, email} = userData
   const [newName, setNewName] = useState(name);
   const [newEmail, setNewEmail] = useState(email);
+  const [nameValidation, setNameValidation] = useState(true);
+  const [emailValidation, setEmailValidation] = useState(true);
 
   const handleChange = (e) => {
     if (e.target.name === "userName") {
@@ -21,12 +23,12 @@ function EditProfile({ userData, SetEditProfileModalHandler, setUserData,
     if (handler === false) {
       SetEditProfileModalHandler(handler);
     }
-    if (setNewName === "") {
-      alert("Can't have empty name value");
+    if (newName === "") {
+      setNameValidation(false)
       return;
     }
-    if (setNewEmail === "") {
-      alert("Can't have empty email value");
+    if (newEmail === "") {
+      setEmailValidation(false);
       return;
     }
     const editQuery = {
@@ -84,8 +86,9 @@ function EditProfile({ userData, SetEditProfileModalHandler, setUserData,
           <label className="edit-modal__label" htmlFor="user name">
             Name:
           </label>
+          <p className={nameValidation===true ?"edit-modal__input--valid-text" : "edit-modal__input--invalid-text"}>Please provide your name</p>
           <input
-            className="edit-modal__input"
+             className={nameValidation===true ? "edit-modal__input" : "edit-modal__input--invalid"}
             type="text"
             name="userName"
             onChange={handleChange}
@@ -94,8 +97,9 @@ function EditProfile({ userData, SetEditProfileModalHandler, setUserData,
           <label className="edit-modal__label" htmlFor="user email">
             Email Address:
           </label>
+          <p className={emailValidation===true ?"edit-modal__input--valid-text" : "edit-modal__input--invalid-text"}>Please provide a valid email address</p>
           <input
-            className="edit-modal__input"
+            className={emailValidation===true ? "edit-modal__input" : "edit-modal__input--invalid"}
             type="text"
             name="email"
             onChange={handleChange}
