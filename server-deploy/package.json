@@ -1,0 +1,33 @@
+{
+  "name": "tabtabtab",
+  "version": "1.0.0",
+  "description": "will save your tabs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js",
+    "migrate": "knex migrate:latest",
+    "migrate:down": "knex migrate:down",
+    "migrate:rollback": "knex migrate:rollback"
+  },
+  "author": "Chanho Kim",
+  "license": "ISC",
+  "devDependencies": {
+    "dotenv": "^10.0.0"
+  },
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "cookie-session": "^1.4.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "express-session": "^1.17.2",
+    "helmet": "^4.6.0",
+    "jsonwebtoken": "^8.5.1",
+    "knex": "^0.21.21",
+    "morgan": "^1.10.0",
+    "mysql": "^2.18.1",
+    "passport": "^0.5.0",
+    "passport-google-oauth20": "^2.0.0",
+    "uuid": "^8.3.2"
+  }
+}
