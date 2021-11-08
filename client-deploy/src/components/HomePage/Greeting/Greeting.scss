@@ -1,0 +1,53 @@
+@use '../../../partials/mixins' as *;
+@use '../../../partials/typography' as *;
+@use '../../../partials/variables' as *;
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 0%;
+  }
+  50% {
+    background-position: 100% 0%;
+  }
+  100% {
+    background-position: 0% 0%;
+  }
+}
+
+.greeting {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 30vh 8rem;
+  background: linear-gradient(
+    175deg,
+    $neon-green,
+    $neon-green,
+    $neon-green,
+    white,
+    white
+  );
+  background-size: 150% 110%;
+  animation: reverse gradient 2s infinite;
+
+  &__background {
+    background-color: white;
+    height: calc(115vh - 9rem);
+    overflow: scroll;
+  }
+
+  &__header {
+    margin: 0 0 1rem 0;
+    font-weight: 700;
+    font-style: italic;
+    font-size: 1.5rem;
+
+    &--name {
+      font-size: 2.5rem;
+    }
+  }
+  &__button {
+    height: 2rem;
+    cursor: pointer;
+  }
+}

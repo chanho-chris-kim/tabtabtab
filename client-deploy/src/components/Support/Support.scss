@@ -1,0 +1,54 @@
+@use '../../partials/mixins' as *;
+@use '../../partials/typography' as *;
+@use '../../partials/variables' as *;
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 0%;
+  }
+  50% {
+    background-position: 100% 0%;
+  }
+  100% {
+    background-position: 0% 0%;
+  }
+}
+
+.support {
+  padding: 30vh 4rem;
+  background: linear-gradient(175deg,$neon-green,$neon-green,$neon-green,white,white);
+  background-size: 150% 110%;
+  animation: gradient 2s infinite;
+  &__background {
+    background-color: white;
+    height: calc(115vh - (9rem + 3.977rem));
+    overflow: scroll;
+  }
+
+  &__header {
+    font-style: italic;
+    margin: 0 0 0.5rem 0;
+  }
+
+  &__logo {
+    font-size: 2.5rem;
+    &--second {
+      font-size: 1.5rem;
+      text-decoration: underline;
+      color: rgb(114, 114, 114);
+
+      &:hover{
+          color: red;
+          cursor: pointer;
+      }
+    }
+  }
+
+  &__sub-header {
+    font-style: italic;
+    font-size: 1.3rem;
+    font-weight: 500;
+    margin: 0;
+    color: rgb(79, 79, 79);
+  }
+}
