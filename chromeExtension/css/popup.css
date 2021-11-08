@@ -115,6 +115,7 @@ body {
     cursor: pointer;
     transition-duration: 0.3s;
     border: solid black 0.1rem;
+    margin-bottom: 0.5rem;
 }
 
 #sign-in:hover {
@@ -149,7 +150,4 @@ h4{
     margin: 0.5rem 0 0.938rem 0;
     color: rgb(0, 0, 0);
     font-weight: 500;
-}
-span{
-    color: rgb(211, 0, 0);
 }

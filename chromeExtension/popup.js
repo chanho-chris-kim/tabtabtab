@@ -1,5 +1,5 @@
 function handleLogoLink(){
-  chrome.tabs.create({ url: `http://localhost:3000/`, active: true });
+  chrome.tabs.create({ url: `https://tabtabtab-chk.herokuapp.com`, active: true });
 }
 document.querySelector(".logo").onclick = () => {
   handleLogoLink();
@@ -7,12 +7,10 @@ document.querySelector(".logo").onclick = () => {
 
 document.querySelector("#sign-in").addEventListener("click", function () {
   chrome.runtime.sendMessage({ message: "login" }, function (response) {
-    console.log("response from google OAUTH")
-    console.log(response)
     let status = null;
     const id = response.sub;
     if (id) {
-      const url = "http://localhost:5000/users";
+      const url = "https://tabtabtab-chk.herokuapp.com";
       const selectedUser = `${url}/${id}`
       const options = {
         method: "GET",
@@ -21,14 +19,11 @@ document.querySelector("#sign-in").addEventListener("click", function () {
         }
       };
       fetch(selectedUser, options).then((response) => {
-        console.log("success:")
-        console.log(response);
         status = response.status
       }).then(()=>{
         if(!status === 404){
           return
         } else{
-        console.log("Fail, creating a new account")
         const options = {
           method: "POST",
           headers:{

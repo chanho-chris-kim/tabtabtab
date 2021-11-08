@@ -1,4 +1,4 @@
-const api = "http://localhost:5000";
+const api = "https://tabtabtab-chk.herokuapp.com";
 let userID = 0;
 let currentURL = "";
 let URLName = "";
@@ -13,7 +13,7 @@ function handleOnclick(url) {
 }
 
 function handleLogoLink() {
-  chrome.tabs.create({ url: `http://localhost:3000/`, active: true });
+  chrome.tabs.create({ url: `https://tabtabtab-chk.herokuapp.com`, active: true });
 }
 document.querySelector(".logo").onclick = () => {
   handleLogoLink();
@@ -26,7 +26,7 @@ function handleDelete(urlID, userID) {
       "Content-Type": "application/json",
     },
   };
-  fetch(`${api}/list/${userID}/${urlID}`, options).then((response) => {
+  fetch(`${api}/list/${userID}/${urlID}`, options).then(() => {
     loadList();
   });
 }
@@ -94,7 +94,7 @@ document.querySelector("#add-button").addEventListener("click", function () {
         URLPath: currentURL,
       }),
     };
-    fetch(`${api}/list/${userID}`, options).then((response) => {
+    fetch(`${api}/list/${userID}`, options).then(() => {
       loadList();
     });
   });
