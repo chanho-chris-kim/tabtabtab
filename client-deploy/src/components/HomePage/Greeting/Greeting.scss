@@ -47,7 +47,23 @@
     }
   }
   &__button {
-    height: 2rem;
+    height: 3rem;
+    width: 13rem;
+    background-color: rgba(255, 255, 255, 0.413);
+    box-shadow: 0 0.125rem 0.313rem rgba(69, 69, 69, 0.445);
+    border: none;
+    color: rgb(24, 24, 24);
+    font-family: 'lato';
+    font-style: italic;
+    font-weight: 700;
     cursor: pointer;
+    &:hover, &:active{
+      background-color: rgba(255, 255, 255, 0.797);
+      color: red;
+      font-weight: 800;
+    }
+    @include tablet {
+      height: 2rem;
+    }
   }
 }
