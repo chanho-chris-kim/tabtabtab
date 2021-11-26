@@ -57,6 +57,7 @@
     font-style: italic;
     font-weight: 700;
     cursor: pointer;
+    border-radius: 0.2rem;
     &:hover, &:active{
       background-color: rgba(255, 255, 255, 0.797);
       color: red;
