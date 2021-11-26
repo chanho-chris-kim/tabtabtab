@@ -11,7 +11,7 @@ function Greeting() {
       <div className="greeting">
         <div className="greeting__content">
           <h1 className="greeting__header">
-            Start clear out your tabs with
+            Start clearing out your tabs with
             <span className="greeting__header--name">TabTabTab</span>
           </h1>
         </div>
