@@ -30,7 +30,7 @@ function URLList({ id, name }) {
       axios.get(`${url}/list/${id}`).then((res) => {
         setList(res.data);
       });
-    }, 5000);
+    }, 1000);
 
     return (()=>{
       clearInterval(intervalId);

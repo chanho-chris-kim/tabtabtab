@@ -105,7 +105,7 @@ body {
     height: 25%;
     padding: 0.313rem;
     font-size: 1.8rem;
-    background-color: #21fb0c;
+    background-color: #47a2d7;
     border-radius: 0.313rem;
     text-align: center;
     color: black;
@@ -124,7 +124,7 @@ body {
   }
 
 .header{
-    background-color: #21fb0c;
+    background-color: #47a2d7;
     width: 100%;
     text-align: left;
     padding: 0.5rem 0 0.3rem 1rem;

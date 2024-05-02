@@ -13,7 +13,7 @@ function handleOnclick(url) {
 }
 
 function handleLogoLink() {
-  chrome.tabs.create({ url: `https://tabtabtab-chk.herokuapp.com`, active: true });
+  chrome.tabs.create({ url: `${api}`, active: true });
 }
 document.querySelector(".logo").onclick = () => {
   handleLogoLink();

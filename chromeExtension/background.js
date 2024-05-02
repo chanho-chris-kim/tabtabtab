@@ -1,6 +1,6 @@
 const CLIENT_ID = encodeURIComponent('583284202802-ut9r6684vp77g7vm1p6dt6uptqt6q0ri.apps.googleusercontent.com');
 const RESPONSE_TYPE = encodeURIComponent('id_token');
-const REDIRECT_URI = encodeURIComponent('https://ijopgfijhbopphdidffaipkfpnfalpng.chromiumapp.org');
+const REDIRECT_URI = encodeURIComponent('https://ekiahackpfmlmiogmfiljngjbamiefof.chromiumapp.org');
 const SCOPE = encodeURIComponent('openid');
 const STATE = encodeURIComponent('meet' + Math.random().toString(36).substring(2, 15));
 const PROMPT = encodeURIComponent('consent');
@@ -35,7 +35,7 @@ chrome.runtime.onMessage.addListener((request, _sender, sendResponse) => {
             }, function (redirect_url) {
                 if (chrome.runtime.lastError) {
                     // problem signing in
-                    console.log(`ERROR: ${chrome.runtime.lastError}`)
+                    console.log(`ERROR: ${chrome.runtime.lastError.message}`)
                 } else {
                     let id_token = redirect_url.substring(redirect_url.indexOf('id_token=') + 9);
                     id_token = id_token.substring(0, id_token.indexOf('&'));

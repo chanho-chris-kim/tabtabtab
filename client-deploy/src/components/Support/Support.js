@@ -2,7 +2,7 @@ import './Support.scss'
 function Support() {
     // 
     const linkHandler = () => {
-        window.open("https://chrome.google.com/webstore/category/extensions");
+        window.open("https://chrome.google.com/webstore/detail/tabtabtab-ext/ekiahackpfmlmiogmfiljngjbamiefof?hl=en-US&authuser=0");
       };
     return (
         <div className="support__background">

@@ -3,6 +3,8 @@
 @use '../../../partials/variables' as *;
 
 .logged-in {
+  height: calc(100vh - 9rem);
+  overflow: scroll;
   &__icon-background {
     position: absolute;
     background-color: #92ff83;
