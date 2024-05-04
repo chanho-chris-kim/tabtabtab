@@ -7,7 +7,6 @@
   overflow: scroll;
   &__icon-background {
     position: absolute;
-    background-color: #92ff83;
     top: 4.8rem;
     right: 1rem;
     width: 2.8rem;
@@ -15,6 +14,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    z-index: 999;
     @include tablet {
       top: 5.1rem;
       right: 1.2rem;
@@ -32,6 +32,7 @@
       align-items: center;
       justify-content: center;
       border-radius: 0.5rem 0 0 0.5rem;
+      z-index: 999;
 
       @include tablet {
         right: 4.8rem;

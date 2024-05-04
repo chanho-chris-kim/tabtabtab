@@ -8,7 +8,8 @@
 
   &__header {
     padding: 0.5rem 1rem;
-    background-color: #92ff83;
+    background-color: $neon-green;
+    filter: saturate(0.7) brightness(130%);
   }
 
   &__header-title {
@@ -25,7 +26,6 @@
       font-size: 1.5rem;
       font-weight: 700;
       font-style: italic;
-      color: rgb(140, 140, 140);
       @include tablet {
         font-size: 1.8rem;
         margin: 0.25rem 1rem 0.1rem;
